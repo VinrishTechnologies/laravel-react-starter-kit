@@ -1,6 +1,6 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/react-starter-kit",
+    "name": "vinrishtechnologies/laravel-react-starter-kit",
     "type": "project",
     "description": "The skeleton application for the Laravel framework.",
     "keywords": [
@@ -9,26 +9,30 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.3",
-        "inertiajs/inertia-laravel": "^3.0",
-        "laravel/chisel": "^0.1.0",
-        "laravel/fortify": "^1.37.2",
-        "laravel/framework": "^13.17",
-        "laravel/tinker": "^3.0",
-        "laravel/wayfinder": "^0.1.14"
+        "php": "^8.4.0 | ^8.5.0",
+        "inertiajs/inertia-laravel": "^3.1.1",
+        "laravel/chisel": "^0.1.1",
+        "laravel/fortify": "^1.37.3",
+        "laravel/framework": "^13.23.0",
+        "laravel/tinker": "^3.0.2",
+        "laravel/wayfinder": "^0.1.20"
     },
     "require-dev": {
-        "fakerphp/faker": "^1.24",
-        "larastan/larastan": "^3.9",
-        "laravel/boost": "^2.2",
-        "laravel/pail": "^1.2.5",
-        "laravel/pao": "^1.0.6",
-        "laravel/pint": "^1.27",
-        "laravel/sail": "^1.53",
-        "mockery/mockery": "^1.6",
-        "nunomaduro/collision": "^8.9.3",
-        "pestphp/pest": "^4.7",
-        "pestphp/pest-plugin-laravel": "^4.1"
+        "driftingly/rector-laravel": "^2.5.0",
+        "fakerphp/faker": "^1.24.1",
+        "larastan/larastan": "^3.10.0",
+        "laravel/boost": "^2.4.11",
+        "laravel/pail": "^1.2.7",
+        "laravel/pao": "^1.1.2",
+        "laravel/pint": "^1.29.3",
+        "mockery/mockery": "^1.6.12",
+        "nunomaduro/collision": "^8.9.4",
+        "pestphp/pest": "^5.0",
+        "pestphp/pest-plugin-browser": "^5.0",
+        "pestphp/pest-plugin-laravel": "^5.0",
+        "pestphp/pest-plugin-type-coverage": "^5.0",
+        "rector/rector": "^2.5.2",
+        "roave/security-advisories": "dev-latest"
     },
     "autoload": {
         "psr-4": {
@@ -55,27 +59,31 @@
             "Composer\\Config::disableProcessTimeout",
             "npx concurrently -c \"#93c5fd,#c4b5fd,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1 --timeout=0\" \"npm run dev\" --names='server,queue,vite'"
         ],
+        "update:requirements": [
+            "composer bump",
+            "npx npm-check-updates -u"
+        ],
         "lint": [
-            "pint --parallel"
+            "rector",
+            "pint --parallel",
+            "npm run lint"
         ],
-        "lint:check": [
-            "pint --parallel --test"
+        "test:type-coverage": "pest --type-coverage --min=100",
+        "test:lint": [
+            "pint --parallel --test",
+            "rector --dry-run",
+            "npm run test:lint"
         ],
-        "ci:check": [
-            "Composer\\Config::disableProcessTimeout",
-            "npm run lint:check",
-            "npm run format:check",
-            "npm run types:check",
-            "@test"
-        ],
-        "types:check": [
-            "phpstan analyse"
+        "test:unit": "XDEBUG_MODE=\"coverage\" pest --parallel --coverage --exactly=100.0",
+        "test:types": [
+            "phpstan",
+            "npm run test:types"
         ],
         "test": [
-            "@php artisan config:clear --ansi",
-            "@lint:check",
-            "@types:check",
-            "@php artisan test"
+            "@test:lint",
+            "@test:type-coverage",
+            "@test:types",
+            "@test:unit"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
@@ -114,6 +122,6 @@
             "php-http/discovery": true
         }
     },
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
     "prefer-stable": true
 }
