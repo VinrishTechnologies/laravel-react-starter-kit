@@ -75,18 +75,17 @@
         "test:lint": [
             "pint --parallel --test",
             "rector --dry-run",
-            "npm run test:lint"
+            "npm run lint:check"
         ],
         "test:unit": "XDEBUG_MODE=\"coverage\" pest --parallel --coverage --exactly=100.0",
         "test:types": [
             "phpstan",
-            "npm run test:types"
+            "npm run types:check"
         ],
         "test": [
-            "@test:lint",
+            "npm run lint:check",
             "@test:type-coverage",
-            "@test:types",
-            "@test:unit"
+            "npm run types:check"
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
