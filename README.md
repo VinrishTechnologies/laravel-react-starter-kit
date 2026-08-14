@@ -1,10 +1,10 @@
-- Inertia & React (this project) version: **[github.com/vinrish/laravel-react-starter-kit](https://github.com/vinrish/laravel-react-starter-kit)**
+- Inertia & React (this project) version: **[github.com/vinrishtechnologies/laravel-react-starter-kit](https://github.com/vinrish/laravel-react-starter-kit)**
 
 <p>
-    <a href="https://github.com/vinrish/laravel-inertia-react-starter-kit/actions"><img src="https://github.com/vinrish/laravel-react-starter-kit/actions/workflows/tests.yml/badge.svg" alt="Build Status"></a>
-    <a href="https://packagist.org/packages/vinrish/laravel-inertia-react-starter-kit"><img src="https://img.shields.io/packagist/dt/vinrish/laravel-react-starter-kit" alt="Total Downloads"></a>
-    <a href="https://packagist.org/packages/vinrish/laravel-inertia-react-starter-kit"><img src="https://img.shields.io/packagist/v/vinrish/laravel-react-starter-kit" alt="Latest Stable Version"></a>
-    <a href="https://packagist.org/packages/vinrish/laravel-inertia-react-starter-kit"><img src="https://img.shields.io/packagist/l/vinrish/laravel-react-starter-kit" alt="License"></a>
+    <a href="https://github.com/vinrish/laravel-inertia-react-starter-kit/actions"><img src="https://github.com/vinrishtechnologies/laravel-react-starter-kit/actions/workflows/tests.yml/badge.svg" alt="Build Status"></a>
+    <a href="https://packagist.org/packages/vinrish/laravel-inertia-react-starter-kit"><img src="https://img.shields.io/packagist/dt/vinrishtechnologies/laravel-react-starter-kit" alt="Total Downloads"></a>
+    <a href="https://packagist.org/packages/vinrish/laravel-inertia-react-starter-kit"><img src="https://img.shields.io/packagist/v/vinrishtechnologies/laravel-react-starter-kit" alt="Latest Stable Version"></a>
+    <a href="https://packagist.org/packages/vinrish/laravel-inertia-react-starter-kit"><img src="https://img.shields.io/packagist/l/vinrishtechnologies/laravel-react-starter-kit" alt="License"></a>
 </p>
 
 **Laravel Starter Kit (Inertia & React)** is an ultra-strict, type-safe [Laravel](https://laravel.com) skeleton engineered for developers who refuse to compromise on code quality. This opinionated starter kit enforces rigorous development standards through meticulous tooling configuration and architectural decisions that prioritize type safety, immutability, and fail-fast principles.
@@ -32,7 +32,7 @@ Modern PHP has evolved into a mature, type-safe language, yet many Laravel proje
 Create your type-safe Laravel application using [Composer](https://getcomposer.org):
 
 ```bash
-composer create-project vinrish/laravel-react-starter-kit --prefer-dist example-app
+composer create-project vinrishtechnologies/laravel-react-starter-kit --prefer-dist example-app
 ```
 
 ### Initial Setup
