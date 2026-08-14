@@ -1,9 +1,9 @@
 {
     "mcpServers": {
         "laravel-boost": {
-            "command": "C:\\Users\\MSI\\.config\\herd\\bin\\php84\\php.exe",
+            "command": "/Users/nunomaduro/Library/Application Support/Herd/bin/php85",
             "args": [
-                "C:\\Users\\MSI\\Herd\\laravel-react-starter-kit\\artisan",
+                "/Users/nunomaduro/Work/projects/nunomaduro/starter-kits/laravel-starter-kit-inertia-react/artisan",
                 "boost:mcp"
             ]
         }
