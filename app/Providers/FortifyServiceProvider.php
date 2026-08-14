@@ -46,24 +46,26 @@ class FortifyServiceProvider extends ServiceProvider
      */
     private function configureViews(): void
     {
-        Fortify::loginView(fn (Request $request) => Inertia::render('auth/login', [
-            'canResetPassword' => Features::enabled(Features::resetPasswords()),
-            'status' => $request->session()->get('status'),
-        ]));
+//        Fortify::loginView(fn (Request $request) => Inertia::render('auth/login', [
+//            'canResetPassword' => Features::enabled(Features::resetPasswords()),
+//            'status' => $request->session()->get('status'),
+//        ]));
 
-        Fortify::resetPasswordView(fn (Request $request) => Inertia::render('auth/reset-password', [
-            'email' => $request->email,
-            'token' => $request->route('token'),
-            'passwordRules' => Password::defaults()->toPasswordRulesString(),
-        ]));
+//        Fortify::resetPasswordView(fn (Request $request) => Inertia::render('auth/reset-password', [
+//            'email' => $request->email,
+//            'token' => $request->route('token'),
+//            'passwordRules' => Password::defaults()->toPasswordRulesString(),
+//        ]));
 
-        Fortify::requestPasswordResetLinkView(fn (Request $request) => Inertia::render('auth/forgot-password', [
-            'status' => $request->session()->get('status'),
-        ]));
+//        Fortify::requestPasswordResetLinkView(fn (Request $request) => Inertia::render('auth/forgot-password', [
+//            'status' => $request->session()->get('status'),
+//        ]));
 
-        Fortify::twoFactorChallengeView(fn () => Inertia::render('auth/two-factor-challenge'));
+//        Fortify::twoFactorChallengeView(fn () => Inertia::render('auth/two-factor-challenge'));
 
-        Fortify::confirmPasswordView(fn () => Inertia::render('auth/confirm-password'));
+//        Fortify::confirmPasswordView(fn () => Inertia::render('auth/confirm-password'));
+        Fortify::twoFactorChallengeView(fn () => Inertia::render('user-two-factor-authentication-challenge/show'));
+        Fortify::confirmPasswordView(fn () => Inertia::render('user-password-confirmation/create'));
     }
 
     /**
