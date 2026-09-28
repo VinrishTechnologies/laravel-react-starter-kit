@@ -10,7 +10,7 @@ import AppLayout from '@/layouts/app-layout';
 import SettingsLayout from '@/layouts/settings/layout';
 import { edit } from '@/routes/user-profile';
 import { send } from '@/routes/verification';
-import type { BreadcrumbItem } from '@/types';
+import type { Auth, BreadcrumbItem } from '@/types';
 
 const breadcrumbs: BreadcrumbItem[] = [
     {
@@ -26,7 +26,7 @@ export default function Edit({
     mustVerifyEmail: boolean;
     status?: string;
 }) {
-    const { auth } = usePage().props;
+    const { auth: Auth } = usePage().props;
 
     return (
         <AppLayout breadcrumbs={breadcrumbs}>
